@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #F9F9F9;
+  min-height: 150vh;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 150vh; 
+  background-color: #FFFFFF;
+}
+
+.sora-regular {
+  font-family: 'Sora', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sora-bold {
+  font-family: 'Sora', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.open-sans-light {
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.open-sans-bold {
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.open-sans-semibold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.navbar {
+  width: 100%;
+  height: 110px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar-content {
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  height: 28px;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 48px;
+  flex: 1;
+}
+
+.menu a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: #4A4A4A;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 200; 
+  letter-spacing: 2px;
+  line-height: 22px; 
+  cursor: pointer;
+}
+
+.menu a.active {
+  font-weight: 700; 
+}
+
+.foods-section {
+  position: relative;
+  padding-top: 40px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.section-title {
+  margin-left: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #4A4A4A;
+  text-transform: uppercase;
+  width: 940px;
+  text-align: left;        
+  letter-spacing: 1px;     
+  line-height: 22px;       
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gradient-bar {
+  position: absolute;
+  width: 940px;
+  height: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 74px;
+  background: linear-gradient(to right, #AE23A9, #DC4E1B);
+  margin-top: 1px;
+}
+
+.food-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  width: 940px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 290px;
+  height: 290px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  .navbar-content,
+  .section-title,
+  .gradient-bar,
+  .food-grid {
+    width: 90%;
+  }
+
+  .menu {
+    gap: 24px;
+  }
+
+  .menu a {
+    font-size: 16px;
+    margin-left: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .card {
+    width: 45%;
+    height: 220px;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .navbar-content,
+  .section-title,
+  .gradient-bar,
+  .food-grid {
+    width: 95%;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    margin-left: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  .card {
+    width: 100%;
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .navbar {
+    height: 90px;
+  }
+
+  .logo-img {
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu a {
+    margin-left: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .gradient-bar {
+    width: 90%;
+    left: 5%;
+    transform: none;
+  }
+
+  .food-grid {
+    width: 100%;
+    margin-top: 40px;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    bottom: 8px;
+    left: 8px;
+  }
+}
