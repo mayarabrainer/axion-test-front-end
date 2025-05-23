@@ -132,6 +132,7 @@ body, html {
   height: 100%;
   border: none;
   outline: none;
+  background-color: #FFFFFF;
   background: transparent;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -270,3 +271,110 @@ body, html {
   text-decoration: underline;
 }
 
+
+@media (max-width: 1024px) {
+  .login-card {
+    width: 90vw;
+    max-width: 430px;
+    height: auto;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    padding-bottom: 40px;
+  }
+
+  .decorative-image {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 300px;
+    margin-bottom: 20px;
+    z-index: 0;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .login-button, .register-button, .divider {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .login-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    width: 95vw;
+    top: 10px;
+  }
+
+  .decorative-image {
+    height: 250px;
+  }
+
+  .input-wrapper {
+    height: 50px;
+    max-width: 100%;
+  }
+
+  .login-button, .register-button {
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-wrapper input {
+    font-size: 14px;
+  }
+
+  .checkbox-group label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    width: 100vw;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .decorative-image {
+    display: none;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    height: 45px;
+  }
+
+  .login-button, .register-button {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    line-height: 45px;
+  }
+
+  .input-group label,
+  .checkbox-group label,
+  .help-text {
+    font-size: 13px;
+  }
+
+  .login-form {
+    padding: 15px;
+  }
+}

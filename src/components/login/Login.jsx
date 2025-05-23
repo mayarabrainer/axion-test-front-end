@@ -5,25 +5,25 @@ import lockIcon from '../../assets/lock.png';
 import logoImg from '../../assets/logo.png';
 import backgroundImg from '../../assets/bg.jpg';
 import { login } from '../../services/auth';
-import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate(); 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await login(email, password);
-      navigate('/home');
-    } catch (err) {
-      setError('Erro na comunicação com o servidor', err);
-    }
+try {
+  await login(email, password);
+  setError(null);
+  onLoginSuccess();
+} catch (error) {
+  console.error('Erro no login:', error);
+  setError('Erro na comunicação com o servidor ou credenciais inválidas.');
+}
+
   };
 
   return (
@@ -74,7 +74,7 @@ const Login = () => {
 
             {error && <p style={{ color: 'red' }}>{error}</p>}
 
-             <p className="help-text">Problemas para acessar sua conta?</p>
+            <p className="help-text">Problemas para acessar sua conta?</p>
 
             <button className="login-button" type="submit">Acessar</button>
 
@@ -83,7 +83,7 @@ const Login = () => {
             <button className="register-button" type="button">Cadastrar</button>
 
             <div className="footer-links">
-              <a href="#">Termos de uso    </a>•<a href="#">    Política de privacidade</a>
+              <a href="#">Termos de uso</a>•<a href="#">Política de privacidade</a>
             </div>
           </form>
         </div>
