@@ -136,10 +136,10 @@ body {
 
 .gradient-bar {
   position: absolute;
-  width: 940px;
+  width: 61.5%;
   height: 5px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 49.5%;
+  transform: translateX(-49.5%);
   top: 74px;
   background: linear-gradient(to right, #AE23A9, #DC4E1B);
   margin-top: 1px;
@@ -153,6 +153,7 @@ body {
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .card {

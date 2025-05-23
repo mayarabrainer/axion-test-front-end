@@ -10,13 +10,15 @@ const Home = () => {
   useEffect(() => {
     api.get(`/${activeTab}`)
       .then((res) => {
-        setItems(
-          res.data.map((item) => ({
+        const sortedItems = res.data
+          .map((item) => ({
             id: item.id,
             name: item.name,
             link: item.link,
           }))
-        );
+          .sort((a, b) => a.name.localeCompare(b.name)); 
+
+        setItems(sortedItems);
       })
       .catch((err) => {
         console.error('Erro ao buscar dados:', err);
