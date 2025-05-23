@@ -43,24 +43,19 @@
 }
 
 body, html {
-  width: 1440px;
-  height: 1024px;
+  width: 100%;
+  min-height: 100vh;
   font-family: 'Open Sans', 'Sora', sans-serif;
   background-color: #F9F9F9;
-}
-
-.login-logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .login-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  background-color: #f5f5f5;
-  overflow: hidden;
+  background-color: #F9F9F9;
 }
 
 .login-card {
@@ -77,10 +72,10 @@ body, html {
 
 .decorative-image {
   position: absolute;
-  width: 860px;
-  height: 444px;
-  left: 580px;
-  top: 231px;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-20%);
+  height: 500px;
   object-fit: cover;
   z-index: 0;
 }
@@ -91,6 +86,8 @@ body, html {
   margin: 0 0 24px 5px;
   object-fit: contain;
   display: block;
+  margin-top: 20px;
+
 }
 
 .login-form {
@@ -101,24 +98,20 @@ body, html {
   flex-direction: column;
 }
 
-.login-title {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  margin-bottom: 32px;
-}
-
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .input-group label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color:#4A4A4A;
   display: block;
   margin-bottom: 10px;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 19px;
 }
 
 .input-wrapper {
@@ -140,13 +133,25 @@ body, html {
   border: none;
   outline: none;
   background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   font-size: 16px;
-  padding-left: 12px;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 19px;
+  padding-left: 16px; 
+}
+
+.input-wrapper input::placeholder {
+  color: #4A4A4A;
+  opacity: 0.5;  
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
 .icon-image {
   position: absolute;
-  right: 12px;
+  right: 20px;
   width: 18px;
   height: 18px;
   opacity: 0.7;
@@ -161,43 +166,62 @@ body, html {
 
 .checkbox-group label {
   margin-left: 8px;
-  font-size: 13px;
-  color: #555;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 19px;
+  color: #4A4A4A;
 }
 
 .help-text {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
+  text-align: left;
+  letter-spacing: 2px;
+  line-height: 17px;
   color: #4A4A4A;
-  margin-bottom: 40px;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
+
 
 .login-button {
   width: 350px;
   height: 55px;
   background: linear-gradient(90deg, #AE23A9 0%, #DC4E1B 100%);
-  color: white;
+  color: #FFFFFF;
   border: none;
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600; 
+  letter-spacing: 1px;
+  line-height: 19px;
+  text-align: center;
   cursor: pointer;
   display: inline-block;
-  text-align: center;
-  line-height: 55px;
+  line-height: 55px; 
 }
+
 
 .divider {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 350px;
-  margin: 20px auto;
-  color: #909090;
-  font-size: 14px;
+  margin: 40px auto;
+  color: #4A4A4A;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; 
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 19px;
   gap: 12px;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
+
 
 .divider::before,
 .divider::after {
@@ -208,27 +232,37 @@ body, html {
 }
 
 .register-button {
-  background-color: white;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 16px;
-  border-radius: none;
+  background-color: #FFFFFF;
+  color: #4A4A4A;
+  border: 1px solid #9B9B9B;
+  padding: 0;                        
+  border-radius: 0;                 
   cursor: pointer;
-  font-weight: bold;
   width: 350px;
   height: 45px;
+  
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;                
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 19px;             
 }
 
 .footer-links {
   margin-top: 24px;
-  font-size: 14px;
-  color: #888;
-  text-align: left;
   margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;    
+  font-size: 13px;
+  text-align: left;
+  letter-spacing: 2px;
+  line-height: 17px;
+  color: #4A4A4A;
 }
 
 .footer-links a {
-  color: #888;
+  color: #4A4A4A;
   text-decoration: none;
 }
 

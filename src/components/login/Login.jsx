@@ -4,9 +4,27 @@ import emailIcon from '../../assets/mail.png';
 import lockIcon from '../../assets/lock.png';
 import logoImg from '../../assets/logo.png';
 import backgroundImg from '../../assets/bg.jpg';
+import { login } from '../../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate(); 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await login(email, password);
+      navigate('/home');
+    } catch (err) {
+      setError('Erro na comunicação com o servidor', err);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -14,7 +32,7 @@ const Login = () => {
         <div className="login-form">
           <img src={logoImg} alt="Logo Orange" className="login-logo" />
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label htmlFor="email">Email</label>
               <div className="input-wrapper">
@@ -23,6 +41,9 @@ const Login = () => {
                   type="email"
                   id="email"
                   placeholder="seunome@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -35,6 +56,9 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -48,16 +72,18 @@ const Login = () => {
               <label htmlFor="showPassword">Mostrar a senha.</label>
             </div>
 
-            <p className="help-text">Problemas para acessar sua conta?</p>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
 
-            <button className="login-button">Acessar</button>
+             <p className="help-text">Problemas para acessar sua conta?</p>
+
+            <button className="login-button" type="submit">Acessar</button>
 
             <div className="divider">OU</div>
 
-            <button className="register-button">Cadastrar</button>
+            <button className="register-button" type="button">Cadastrar</button>
 
             <div className="footer-links">
-              <a href="#">Termos de uso</a> • <a href="#">Política de privacidade</a>
+              <a href="#">Termos de uso    </a>•<a href="#">    Política de privacidade</a>
             </div>
           </form>
         </div>
