@@ -188,7 +188,6 @@ body, html {
   margin-bottom: 40px;
 }
 
-
 .login-button {
   width: 350px;
   height: 55px;
@@ -206,7 +205,6 @@ body, html {
   line-height: 55px; 
 }
 
-
 .divider {
   display: flex;
   align-items: center;
@@ -222,7 +220,6 @@ body, html {
   line-height: 19px;
   gap: 12px;
 }
-
 
 .divider::before,
 .divider::after {
