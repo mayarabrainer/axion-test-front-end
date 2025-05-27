@@ -26,8 +26,6 @@ Você pode baixar e instalar o **nvm-windows** clicando [aqui](https://github.co
 - Feedback de erro ao usuário
 - Autenticação integrada (`login`)
 - Layout moderno e adaptado para diferentes dispositivos
-- Ícones personalizados nos campos de entrada
-- Links de termos e privacidade no rodapé
 
 ---
 
@@ -35,7 +33,7 @@ Você pode baixar e instalar o **nvm-windows** clicando [aqui](https://github.co
 
 - **React** (biblioteca principal)
 - **JavaScript (ES6+)**
-- **CSS modularizado**
+- **CSS**
 - **Imagens personalizadas** (ícones e background)
 - **Vite** (presumido pelo padrão do projeto)
 
